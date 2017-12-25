@@ -9,6 +9,11 @@ import sys
 
 import googlemaps
 
+def get_destinations():
+    return [
+        "12193 Fair Lakes Promenade Dr, Fairfax, VA 22033",
+        ]
+
 
 def get_api_key():
     return os.environ.get('GOOGLE_API_KEY')
@@ -32,7 +37,7 @@ def main():
 
     client = googlemaps.Client(key=API_KEY)
     origin = "9402 Meadow Crossing Way, Fairfax Station, VA 22039"
-    destinations = ["12193 Fair Lakes Promenade Dr, Fairfax, VA 22033"]
+    destinations = get_destinations()
     print_round_trips(client, origin, destinations)
 
 
