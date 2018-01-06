@@ -9,6 +9,13 @@ import sys
 
 import googlemaps
 
+
+DEFAULT_ORIGIN = "9402 Meadow Crossing Way, Fairfax Station, VA 22039"
+
+def get_origin():
+    return DEFAULT_ORIGIN
+
+
 def get_destinations():
     return [
         "12193 Fair Lakes Promenade Dr, Fairfax, VA 22033",
@@ -36,7 +43,7 @@ def main():
         sys.exit(1)
 
     client = googlemaps.Client(key=API_KEY)
-    origin = "9402 Meadow Crossing Way, Fairfax Station, VA 22039"
+    origin = get_origin()
     destinations = get_destinations()
     print_round_trips(client, origin, destinations)
 
