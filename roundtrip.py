@@ -1,7 +1,4 @@
-#!/usr/bin/python
-
-from __future__ import print_function
-from __future__ import division
+#!/usr/bin/python3
 
 from datetime import datetime
 import os
@@ -18,7 +15,7 @@ def get_origin():
 
 def get_destinations():
     return [
-        "12193 Fair Lakes Promenade Dr, Fairfax, VA 22033",
+        "774a walker road, Great Falls, VA",
         ]
 
 
@@ -32,7 +29,7 @@ def print_round_trips(client, origin, destinations):
         result_routes = client.directions(
             origin, destination, mode="driving", departure_time=now)
         distance = result_routes[0]['legs'][0]['distance']['value']
-        trip = round(distance * 2 / 5280, 2)
+        trip = round(distance * 2 / 1609.34, 2)
         print('{}:\t{}'.format(destination, trip))
 
 
